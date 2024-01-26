@@ -1,0 +1,19 @@
+---
+kubernetes:
+  children:
+    master:
+      hosts:
+        "garuda":
+          ansible_user: "xored"
+          ansible_host: "10.26.26.10"
+    worker:
+      hosts:
+        "ifrit-01":
+          ansible_user: "xored"
+          ansible_host: "10.26.26.15"
+        "ifrit-02":
+          ansible_user: "xored"
+          ansible_host: "10.26.26.16"
+        "ifrit-03":
+          ansible_user: "xored"
+          ansible_host: "10.26.26.17"
