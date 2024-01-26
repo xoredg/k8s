@@ -21,3 +21,4 @@ Brewfile.lock.json
 .idea
 # wiki
 wiki
+*.decrypted*
