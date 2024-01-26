@@ -21,3 +21,9 @@ Brewfile.lock.json
 .idea
 # wiki
 wiki
+
+terraform
+terragrunt.hcl
+.terraform.lock.hcl
+.terragrunt-cache
+IPS.md
