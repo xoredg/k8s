@@ -1,0 +1,86 @@
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2beta2.json
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: &app speedtest
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: app-template
+      version: 2.5.0
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    controllers:
+      main:
+        type: statefulset
+        statefulset:
+          volumeClaimTemplates:
+            - name: config
+              accessMode: ReadWriteOnce
+              size: 1Gi
+              storageClass: openebs-hostpath
+              globalMounts:
+                - path: /config
+        annotations:
+          reloader.stakater.com/auto: "true"
+        initContainers:
+          init-db:
+            image:
+              repository: ghcr.io/onedr0p/postgres-init
+              tag: "16"
+            envFrom: &envFrom
+              - secretRef:
+                  name: speedtest-tracker-secret
+        containers:
+          main:
+            image:
+              repository: ghcr.io/alexjustesen/speedtest-tracker
+              tag: v0.14.4@sha256:4aa9c7d7407f4dcbf869f4b7a0500832138c787b10257803b65c0796c75fcc5e
+            envFrom: *envFrom
+            resources: &resources
+              requests:
+                cpu: 10m
+                memory: 50Mi
+              limits:
+                memory: 256Mi
+    service:
+      main:
+        ports:
+          http:
+            port: 80
+    ingress:
+      main:
+        enabled: true
+        className: internal
+        annotations:
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/icon: https://raw.githubusercontent.com/smbonn2005/homeops/main/icons/speedtest.png
+          gethomepage.dev/name: Speedtest
+          gethomepage.dev/group: "Glances"
+          gethomepage.dev/widget.type: speedtest
+          gethomepage.dev/widget.url: http://speedtest.default
+        hosts:
+          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  name: main
+                  port: http
+        tls:
+          - hosts:
+              - *host
