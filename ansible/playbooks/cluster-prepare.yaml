@@ -43,6 +43,27 @@
             modification_time: preserve
             access_time: preserve
 
+    - name: Check systemd-resolved status
+      ansible.builtin.service_facts:
+
+    - name: Disable systemd-resolved
+      when: "'systemd-resolved.service' in ansible_facts.services and ansible_facts.services['systemd-resolved.service'].status == 'enabled'"
+      block:
+        - name: Disable systemd-resolved | Stop service
+          ansible.builtin.systemd:
+            name: systemd-resolved
+            state: stopped
+            masked: true
+        - name: Disable systemd-resolved | Remove symlink
+          ansible.builtin.file:
+            path: /etc/resolv.conf
+            state: absent
+        - name: Disable systemd-resolved | Create normal resolv.conf
+          ansible.builtin.copy:
+            dest: /etc/resolv.conf
+            content: "nameserver 1.1.1.1"
+            mode: '0644'
+
     - name: Network Configuration
       notify: Reboot
       block:
