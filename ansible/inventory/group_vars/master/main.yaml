@@ -17,7 +17,7 @@ k3s_server:
   secrets-encryption: true
   cluster-cidr: "10.42.0.0/16"
   service-cidr: "10.43.0.0/16"
-  etcd-expose-metrics: true # Required to monitor etcd with kube-prometheus-stack
+  etcd-expose-metrics: false # Required to monitor etcd with kube-prometheus-stack
   kube-controller-manager-arg:
     - "bind-address=0.0.0.0" # Required to monitor kube-controller-manager with kube-prometheus-stack
   kube-scheduler-arg:
