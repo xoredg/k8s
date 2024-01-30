@@ -97,9 +97,10 @@
             attributes: +i
             mode: '0644'
             dest: /etc/resolv.conf
+            # TODO: Needs template
             content: |
               search .
-              nameserver 10.26.26.2
+              nameserver 10.26.28.1
 
     - name: System Configuration
       notify: Reboot

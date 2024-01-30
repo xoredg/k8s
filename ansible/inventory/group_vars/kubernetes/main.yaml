@@ -6,7 +6,7 @@ k3s_install_hard_links: true
 k3s_become: true
 k3s_etcd_datastore: false
 k3s_use_unsupported_config: true
-k3s_registration_address: "10.26.26.30"
+k3s_registration_address: "10.26.28.2"
 # /var/lib/rancher/k3s/server/manifests
 k3s_server_manifests_templates:
   - custom-cilium-helmchart.yaml

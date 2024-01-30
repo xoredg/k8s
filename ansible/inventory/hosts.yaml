@@ -5,15 +5,15 @@ kubernetes:
       hosts:
         "garuda":
           ansible_user: "xored"
-          ansible_host: "10.26.26.10"
+          ansible_host: "10.26.28.10"
     worker:
       hosts:
         "ifrit-01":
           ansible_user: "xored"
-          ansible_host: "10.26.26.15"
+          ansible_host: "10.26.28.11"
         "ifrit-02":
           ansible_user: "xored"
-          ansible_host: "10.26.26.16"
+          ansible_host: "10.26.28.12"
         "ifrit-03":
           ansible_user: "xored"
-          ansible_host: "10.26.26.17"
+          ansible_host: "10.26.28.13"

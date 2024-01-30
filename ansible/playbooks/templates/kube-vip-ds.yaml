@@ -22,7 +22,7 @@ spec:
           args: ["manager"]
           env:
             - name: address
-              value: "10.26.26.30"
+              value: "10.26.28.2"
             - name: vip_arp
               value: "true"
             - name: lb_enable

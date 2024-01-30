@@ -5,7 +5,7 @@ k3s_control_node: true
 k3s_server:
   node-ip: "{{ ansible_host }}"
   tls-san:
-    - "10.26.26.30"
+    - "10.26.28.2"
   docker: false
   flannel-backend: "none" # quote
   disable: ["flannel", "local-storage", "metrics-server", "servicelb", "traefik"]
