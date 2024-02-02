@@ -144,12 +144,12 @@ spec:
           - auto-gomaxprocs
           - memory-snapshot-on-shutdown
           - new-service-discovery-manager
-        thanos:
-          image: quay.io/thanos/thanos:v0.34.0
-          objectStorageConfig:
-            existingSecret:
-              name: thanos-objstore-secret
-              key: objstore.yml
+        # thanos:
+        #   image: quay.io/thanos/thanos:v0.34.0
+        #   objectStorageConfig:
+        #     existingSecret:
+        #       name: thanos-objstore-secret
+        #       key: objstore.yml
         retention: 2d
         retentionSize: 15GB
         externalLabels:
