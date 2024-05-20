@@ -48,8 +48,8 @@ spec:
         containers:
           main:
             image:
-              repository: ghcr.io/alexjustesen/speedtest-tracker
-              tag: v0.19.0@sha256:19abfdb836bcf5b3d15d65dde992efcfafd44454e378476340a5aa0351a01a32
+              repository: ghcr.io/linuxserver/speedtest-tracker
+              tag: v0.19.0-ls22@sha256:54c6e827c2d2e20561caafeef359a288a49b57d9a2390fc7110cba376bdd54fb
             envFrom: *envFrom
             resources: &resources
               requests:
