@@ -35,12 +35,6 @@ spec:
               NTFY_DEBUG: false
               NTFY_LOG_LEVEL: "INFO"
               NTFY_BASE_URL: "https://ntfy.${SECRET_DOMAIN}"
-              NTFY_BEHIND_PROXY: true
-              NTFY_ATTACHMENT_CACHE_DIR: "/var/lib/ntfy/attachments"
-              NTFY_AUTH_FILE: "/var/lib/ntfy/auth.db"
-              NTFY_CACHE_FILE: "/var/lib/ntfy/cache.db"
-              NTFY_AUTH_DEFAULT_ACCESS: "deny-all"
-              NTFY_ENABLE_LOGIN: true
               PORT: &port 80
             resources:
               requests:
@@ -80,6 +74,11 @@ spec:
     persistance:
       config:
         enabled: true
+        type: configMap
+        name: ntfy-config
+        mountPath: /etc/ntfy/server.yml
+      cache:
+        enabled: true
         type: pvc
-        mountPath: /var/lib/ntfy
+        mountPath: /var/cache/ntfy
         storageClass: openebs-hostpath
