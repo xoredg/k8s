@@ -9,3 +9,4 @@ resources:
   - ./speedtest-tracker/ks.yaml
   - ./smtp-relay/ks.yaml
   - ./gotify/ks.yaml
+  - ./ntfy/ks.yaml
