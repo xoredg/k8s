@@ -13,7 +13,7 @@ spec:
   path: ./kubernetes/apps/default/ntfy/app
   dependsOn:
     - name: smtp-relay
-    - name: external-secret-stores
+    - name: external-secrets-stores
   prune: true
   sourceRef:
     kind: GitRepository
