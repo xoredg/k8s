@@ -75,7 +75,7 @@ spec:
       config:
         enabled: true
         type: configMap
-        name: server-config
+        name: ntfy-config
         mountPath: /etc/ntfy/server.yml
       cache:
         enabled: true
