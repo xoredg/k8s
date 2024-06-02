@@ -25,7 +25,6 @@ spec:
   values:
     controllers:
       main:
-        type: statefulset
         annotations:
           reloader.stakater.com/auto: "true"
         initContainers:
@@ -36,14 +35,6 @@ spec:
             envFrom: &envFrom
               - secretRef:
                   name: gotify-secret
-        statefulset:
-          volumeClaimTemplates:
-            - name: gotify
-              accessMode: ReadWriteOnce
-              size: 1Gi
-              storageClass: openebs-hostpath
-              globalMounts:
-                - path: /app/data
         containers:
           app:
             image:
@@ -87,7 +78,7 @@ spec:
     persistence:
       enabled: true
       type: persistentVolumeClaim
-      storageClass: openebs-hostpath
+      storageClass: "openebs-hostpath"
       accessMode: ReadWriteOnce
       size: 1Gi
       globalMounts:
