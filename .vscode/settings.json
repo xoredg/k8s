@@ -22,5 +22,5 @@
     "vs-kubernetes.kubeconfig": "./kubeconfig",
     "vs-kubernetes.knownKubeconfigs": ["./kubeconfig"]
   },
-  "cSpell.words": ["gethomepage"]
+  "cSpell.words": ["gethomepage", "GOTIFY"]
 }
