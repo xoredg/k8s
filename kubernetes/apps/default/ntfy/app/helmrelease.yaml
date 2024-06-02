@@ -31,7 +31,7 @@ spec:
               tag: v2.11.0
             args: ["serve"]
             env:
-              TIMEZONE: "UTC"
+              TIMEZONE: ${TIMEZONE}
               NTFY_DEBUG: false
               NTFY_LOG_LEVEL: "INFO"
               NTFY_BASE_URL: "https://ntfy.${SECRET_DOMAIN}"
