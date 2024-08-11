@@ -1,5 +1,5 @@
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2beta2.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s/helm-charts/main/charts/other/app-template/schemas/helmrelease-helm-v2.schema.json
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
@@ -109,8 +109,8 @@ spec:
                   initialDelaySeconds: 15
               startup:
                 enabled: false
-              securityContext: *securityContext
-              resources: *resources
+            securityContext: *securityContext
+            resources: *resources
         pod:
           securityContext:
             runAsUser: 999
@@ -127,7 +127,7 @@ spec:
             paths:
               - path: /
                 service:
-                  name: main
+                  identifier: main
                   port: http
         tls:
           - hosts:
@@ -140,6 +140,7 @@ spec:
           - path: *configDir
     service:
       main:
+        controller: main
         ports:
           http:
             port: *apiPort
