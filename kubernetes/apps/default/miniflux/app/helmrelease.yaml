@@ -101,7 +101,7 @@ spec:
         enabled: true
         className: internal
         hosts:
-          - host: &host "rss.${SECRET_DOMAIN}"
+          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
               - path: /
                 service:
