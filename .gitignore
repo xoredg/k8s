@@ -27,3 +27,4 @@ terragrunt.hcl
 .terraform.lock.hcl
 .terragrunt-cache
 IPS.md
+.direnv
