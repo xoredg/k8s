@@ -3,7 +3,7 @@
 # https://gethomepage.dev/configs/service-widgets
 
 - logo:
-    icon: mdi-monitor-dashboard
+    icon: https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/heimdall.png
 
 - kubernetes:
     cluster:
