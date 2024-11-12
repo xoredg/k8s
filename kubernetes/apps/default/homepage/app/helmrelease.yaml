@@ -24,6 +24,7 @@ spec:
   values:
     controllers:
       homepage:
+        replicas: 1
         strategy: RollingUpdate
         annotations:
           reloader.stakater.com/auto: "true"
@@ -34,20 +35,29 @@ spec:
               tag: v0.9.12@sha256:31820dab8e3f830f8a88c3ef1b3a1d103b899f2b8f2f51879d960d0db164a573
             env:
               TZ: ${TIMEZONE}
+              LOG_TARGETS: stdout
             envFrom:
               - secretRef:
                   name: homepage-secret
             probes:
+              startup:
+                enabled: true
+                spec:
+                  failureThreshold: 30
+                  periodSeconds: 5
               liveness:
                 enabled: true
               readiness:
                 enabled: true
             resources:
               requests:
-                cpu: 15m
+                cpu: 25m
                 memory: 64Mi
               limits:
                 memory: 256Mi
+            securityContext:
+              allowPrivilegeEscalation: false
+              capabilities: { drop: ["ALL"] }
     service:
       app:
         controller: *app
