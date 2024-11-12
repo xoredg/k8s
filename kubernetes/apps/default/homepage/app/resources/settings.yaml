@@ -9,6 +9,8 @@ background:
   image: "{{HOMEPAGE_VAR_BACKGROUND}}"
   opacity: 20
 color: zinc
+headerStyle: boxedWidgets
+statusStyle: dot
 
 layout:
   Media:
