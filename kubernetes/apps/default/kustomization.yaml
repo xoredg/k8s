@@ -8,6 +8,7 @@ resources:
   # Flux-Kustomizations
   - ./speedtest-tracker/ks.yaml
   - ./smtp-relay/ks.yaml
+  - ./homepage/ks.yaml
   - ./gotify/ks.yaml
   - ./miniflux/ks.yaml
 #  - ./ntfy/ks.yaml

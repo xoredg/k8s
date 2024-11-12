@@ -1,0 +1,98 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services
+# plex token user
+# key: "NbvUKztPgxh1pBy2h4mF"
+
+- Media:
+    - Plex:
+        icon: mdi-plex
+        href: "https://plex.{{HOMEPAGE_VAR_DOMAIN}}:32400/web/index.html"
+        description: Watch movies and TV shows
+        widget:
+          type: tautulli
+          url: http://plex.{{HOMEPAGE_VAR_DOMAIN}}:8181
+          key: "{{HOMEPAGE_VAR_TAUTULLI_TOKEN}}"
+          enableUser: true
+          showEpisodeNumber: true
+    - Overseerr:
+        # icon: overseerr
+        icon: mdi-movie-open-plus
+        href: http://plex.{{HOMEPAGE_VAR_DOMAIN}}:5055
+        description: Request movies and TV shows
+        widget:
+          type: overseerr
+          url: http://plex.{{HOMEPAGE_VAR_DOMAIN}}:5055
+          key: "{{HOMEPAGE_VAR_OVERSEERR_TOKEN}}"
+    - Jackett:
+        # icon: jackett.png
+        icon: mdi-radar
+        href: http://plex.{{HOMEPAGE_VAR_DOMAIN}}:9117
+        widget:
+          type: jackett
+          url: http://plex.{{HOMEPAGE_VAR_DOMAIN}}:9117
+
+- My Second Group:
+    - Gotify:
+        # icon: gotify
+        icon: si-ntfy
+        href: https://gotify.{{HOMEPAGE_VAR_DOMAIN}}
+        widget:
+          type: gotify
+          url: https://gotify.{{HOMEPAGE_VAR_DOMAIN}}
+          key: "{{HOMEPAGE_VAR_GOTIFY_TOKEN}}"
+          fields: ["apps", "clients", "messages"]
+
+    - Miniflux:
+        icon: si-rss
+        href: https://rss.{{HOMEPAGE_VAR_DOMAIN}}/
+        description: RSS reader
+        widget:
+          type: miniflux
+          url: https://rss.{{HOMEPAGE_VAR_DOMAIN}}
+          key: "{{HOMEPAGE_VAR_MINIFLUX_TOKEN}}"
+
+- My Third Group:
+    - SpeedTest:
+        icon: si-speedtest
+        href: https://speedtest.{{HOMEPAGE_VAR_DOMAIN}}
+        widget:
+          type: speedtest
+          url: https://speedtest.{{HOMEPAGE_VAR_DOMAIN}}
+    - Pihole:
+        icon: si-pi-hole
+        href: http://pihole.{{HOMEPAGE_VAR_DOMAIN}}/admin
+        widget:
+          type: pihole
+          url: http://pihole.{{HOMEPAGE_VAR_DOMAIN}}
+          version: 5
+          key: "{{HOMEPAGE_VAR_PIHOLE_TOKEN}}"
+    - OPNSense:
+        icon: si-opnsense
+        href: "{{HOMEPAGE_VAR_OPNSENSE_URL}}"
+        widget:
+          type: opnsense
+          url: "{{HOMEPAGE_VAR_OPNSENSE_URL}}"
+          username: "{{HOMEPAGE_VAR_OPNSENSE_USERNAME}}"
+          password: "{{HOMEPAGE_VAR_OPNSENSE_PASSWORD}}"
+    - Proxmox:
+        icon: si-proxmox
+        href: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
+        widget:
+          type: proxmox
+          url: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
+          username: "{{HOMEPAGE_VAR_PROXMOX_USERNAME}}"
+          password: "{{HOMEPAGE_VAR_PROXMOX_PASSWORD}}"
+    - UptimeRobot:
+        # icon: https://uptimerobot.com/favicon.ico
+        icon: si-uptimekuma
+        href: https://dashboard.uptimerobot.com
+        widget:
+          type: uptimerobot
+          url: https://api.uptimerobot.com
+          key: "{{HOMEPAGE_VAR_UPTIME_ROBOT_TOKEN}}"
+    - Prometheus:
+        icon: si-prometheus
+        widget:
+          type: prometheus
+          url: https://{{HOMEPAGE_VAR_PROMETHEUS_HOST}}.{{HOMEPAGE_VAR_DOMAIN}}
