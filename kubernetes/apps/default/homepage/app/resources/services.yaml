@@ -52,13 +52,7 @@
           url: https://rss.{{HOMEPAGE_VAR_DOMAIN}}
           key: "{{HOMEPAGE_VAR_MINIFLUX_TOKEN}}"
 
-- My Third Group:
-    - SpeedTest:
-        icon: si-speedtest
-        href: https://speedtest.{{HOMEPAGE_VAR_DOMAIN}}
-        widget:
-          type: speedtest
-          url: https://speedtest.{{HOMEPAGE_VAR_DOMAIN}}
+- Observability:
     - Pihole:
         icon: si-pi-hole
         href: http://pihole.{{HOMEPAGE_VAR_DOMAIN}}/admin
