@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pihole-external
+spec:
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+---
+apiVersion: discovery.k8s.io/v1
+kind: EndpointSlice
+metadata:
+  name: pihole-external
+  labels:
+    kubernetes.io/service-name: external-service
+addressType: IPv4
+ports:
+  - name: ""
+    appProtocol: http
+    protocol: TCP
+    port: 80
+endpoints:
+  - addresses:
+      - "10.26.26.2"
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pihole-external
+  annotations:
+    kubernetes.io/ingress.class: "internal"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  rules:
+    - host: pihole.${SECRET_DOMAIN}
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: pihole-external
+                port:
+                  number: 80
