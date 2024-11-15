@@ -13,7 +13,7 @@ kind: EndpointSlice
 metadata:
   name: pihole-external
   labels:
-    kubernetes.io/service-name: external-service
+    kubernetes.io/service-name: pihole-external
 addressType: IPv4
 ports:
   - name: ""
