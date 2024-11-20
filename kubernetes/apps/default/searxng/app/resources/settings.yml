@@ -5,9 +5,11 @@ server:
   limiter: true
   image_proxy: true
   method: GET # https://github.com/searxng/searxng/pull/3619
+  public_instance: false
 
 search:
   autocomplete: duckduckgo
+  favicon_resolver: duckduckgo
 
 general:
   instance_name: Search
