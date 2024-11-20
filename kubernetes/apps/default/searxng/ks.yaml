@@ -14,12 +14,13 @@ spec:
   path: "./kubernetes/apps/default/searxng/app"
   sourceRef:
     kind: GitRepository
-    name: homelab-k8s
+    name: home-kubernetes
   prune: true
   wait: true
   interval: 30m
   timeout: 5m
   dependsOn:
+    - name: redis
     - name: external-secrets-stores
   postBuild:
     substitute:
