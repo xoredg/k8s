@@ -16,6 +16,8 @@ layout:
   Media:
     style: row
     columns: 4
+  Selfhosted:
+    label: "Self-hosted"
 
 providers:
   openweathermap: openweathermapapikey

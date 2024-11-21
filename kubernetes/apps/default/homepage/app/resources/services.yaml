@@ -32,7 +32,7 @@
           type: jackett
           url: http://plex.{{HOMEPAGE_VAR_DOMAIN}}:9117
 
-- My Second Group:
+- Selfhosted:
     - Gotify:
         # icon: gotify
         icon: si-ntfy
@@ -55,10 +55,10 @@
 - Observability:
     - Pihole:
         icon: si-pi-hole
-        href: http://pihole.{{HOMEPAGE_VAR_DOMAIN}}/admin
+        href: https://pihole.{{HOMEPAGE_VAR_DOMAIN}}/admin
         widget:
           type: pihole
-          url: http://pihole.{{HOMEPAGE_VAR_DOMAIN}}
+          url: https://pihole.{{HOMEPAGE_VAR_DOMAIN}}
           version: 5
           key: "{{HOMEPAGE_VAR_PIHOLE_TOKEN}}"
     - OPNSense:

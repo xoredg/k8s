@@ -22,8 +22,10 @@
 #     disk: /
 
 - search:
-    provider: duckduckgo
+    provider: custom
     target: _blank
+    url: "{{HOMEPAGE_VAR_SEARCH_URL}}"
+    suggestionUrl: "{{HOMEPAGE_VAR_SEARCH_SUGGESTIONS_URL}}"
 
 - datetime:
     text_size: md
