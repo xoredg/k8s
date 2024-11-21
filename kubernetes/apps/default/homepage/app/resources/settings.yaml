@@ -15,9 +15,10 @@ statusStyle: dot
 layout:
   Media:
     style: row
-    columns: 4
+    columns: 3
   Selfhosted:
     style: column
+    rows: 1
     label: "Self-hosted"
 
 providers:
