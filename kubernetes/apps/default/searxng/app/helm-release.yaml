@@ -81,7 +81,7 @@ spec:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/description: Search engine
           gethomepage.dev/group: Selfhosted
-          gethomepage.dev/icon: sh-searxng.svg
+          gethomepage.dev/icon: si-searxng
           gethomepage.dev/name: Searxng
         hosts:
           - host: &host search.${SECRET_DOMAIN}
