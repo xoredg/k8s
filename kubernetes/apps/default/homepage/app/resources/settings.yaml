@@ -17,6 +17,7 @@ layout:
     style: row
     columns: 4
   Selfhosted:
+    style: row
     label: "Self-hosted"
 
 providers:
