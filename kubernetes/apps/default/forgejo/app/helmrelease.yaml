@@ -41,7 +41,7 @@ spec:
       className: internal
       annotations:
         gethomepage.dev/enabled: "true"
-        gethomepage.dev/group: Tools
+        gethomepage.dev/group: Selfhosted
         gethomepage.dev/icon: si-forgejo
         gethomepage.dev/name: Forgejo
         nginx.ingress.kubernetes.io/custom-http-errors: "502,503"
