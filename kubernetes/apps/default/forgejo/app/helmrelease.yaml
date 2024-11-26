@@ -61,8 +61,9 @@ spec:
             - *host
     persistence:
       enabled: true
-      create: false
-      claimName: forgejo
+      create: true
+      #claimName: forgejo
+      storageClass: openebs-hostpath
     redis-cluster:
       enabled: false
     postgresql-ha:
