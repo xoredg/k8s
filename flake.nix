@@ -24,6 +24,7 @@
             pkgs.k9s
             pkgs.ansible
             pkgs.fluxcd
+            pkgs.python312Packages.jmespath
           ];
         };
       }
