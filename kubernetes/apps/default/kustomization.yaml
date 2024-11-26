@@ -12,4 +12,5 @@ resources:
   - ./gotify/ks.yaml
   - ./miniflux/ks.yaml
   - ./searxng/ks.yaml
+  - ./forgejo/ks.yaml
 #  - ./ntfy/ks.yaml
