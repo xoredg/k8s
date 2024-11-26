@@ -9,7 +9,7 @@ spec:
       restartPolicy: OnFailure
       containers:
         - name: init-db
-          image: ghcr.io/onedr0p/postgres-init
+          image: ghcr.io/onedr0p/postgres-init:16
           envFrom:
             - secretRef:
                 name: forgejo-init-db
