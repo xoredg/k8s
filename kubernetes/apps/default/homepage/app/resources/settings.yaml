@@ -17,9 +17,7 @@ layout:
     style: row
     columns: 3
   Selfhosted:
-    style: column
-    rows: 1
-    label: "Self-hosted"
+    style: row
 
 providers:
   openweathermap: openweathermapapikey
