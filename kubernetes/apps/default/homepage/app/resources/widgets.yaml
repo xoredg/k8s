@@ -33,3 +33,4 @@
       dateStyle: short
       timeStyle: short
       hour12: true
+      timeZone: ${TIMEZONE}

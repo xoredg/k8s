@@ -53,7 +53,7 @@ spec:
             envFrom: *envFrom
             env:
               SPEEDTEST_SCHEDULE: 0 * * * *
-              DISPLAY_TIMEZONE: America/Vancouver
+              DISPLAY_TIMEZONE: ${TIMEZONE}
             resources:
               requests:
                 cpu: 10m
