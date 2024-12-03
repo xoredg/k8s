@@ -87,7 +87,8 @@ spec:
         server: nas.${SECRET_DOMAIN}
         path: /mnt/nas/books
         globalMounts:
-          - path: /data/books
+          - path: /data
+            subPath: books
       manga:
         type: nfs
         server: nas.${SECRET_DOMAIN}
