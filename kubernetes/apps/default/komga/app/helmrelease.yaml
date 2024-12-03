@@ -88,9 +88,11 @@ spec:
         path: /mnt/nas/books
         globalMounts:
           - path: /data/books
+            readOnly: true
       manga:
         type: nfs
         server: nas.${SECRET_DOMAIN}
         path: /manga
         globalMounts:
           - path: /data/manga
+            readOnly: true
