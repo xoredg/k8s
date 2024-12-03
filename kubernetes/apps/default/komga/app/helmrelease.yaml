@@ -86,7 +86,7 @@ spec:
       books:
         type: nfs
         server: nas.${SECRET_DOMAIN}
-        path: /mnt/nas/books
+        path: /books
         globalMounts:
           - path: /data/books
             readOnly: true
