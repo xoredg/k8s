@@ -26,6 +26,7 @@
           key: "{{HOMEPAGE_VAR_OVERSEERR_TOKEN}}"
     - Jackett:
         # icon: jackett.png
+        description: Indexer
         icon: mdi-radar
         href: http://plex.{{HOMEPAGE_VAR_DOMAIN}}:9117
         widget:
