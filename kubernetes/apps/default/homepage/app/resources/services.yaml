@@ -34,6 +34,9 @@
           url: http://plex.{{HOMEPAGE_VAR_DOMAIN}}:9117
 
 - Selfhosted:
+    - NAS:
+        icon: si-files
+        href: https://nas.${HOMEPAGE_VAR_DOMAIN}
     - Gotify:
         # icon: gotify
         icon: si-ntfy
