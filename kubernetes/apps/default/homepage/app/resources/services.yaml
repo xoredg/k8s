@@ -43,6 +43,7 @@
           url: "{{HOMEPAGE_VAR_NAS_MONITORING_URL}}"
           version: 4
           metric: "fs:/mnt/nas"
+          chart: false
     - Gotify:
         # icon: gotify
         icon: si-ntfy
