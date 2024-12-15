@@ -38,6 +38,16 @@
         icon: si-files
         description: File storage
         href: https://nas.{{HOMEPAGE_VAR_DOMAIN}}
+        widget:
+          type: glances
+          url: "{{ HOMEPAGE_VAR_NAS_MONITORING_URL }}"
+          version: 4
+          cpu: true
+          mem: true
+          disk:
+            - /mnt/nas
+            - /books
+            - /manga
     - Gotify:
         # icon: gotify
         icon: si-ntfy
