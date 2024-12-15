@@ -19,6 +19,9 @@ layout:
   Selfhosted:
     style: row
     columns: 2
+  Reading:
+  Storage:
+  Observability:
 
 providers:
   openweathermap: openweathermapapikey

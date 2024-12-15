@@ -58,13 +58,6 @@
           version: 4
           metric: "fs:/mnt/media/manga"
           chart: false
-    - Sketch:
-        widget:
-          type: glances
-          url: "{{HOMEPAGE_VAR_NAS_MONITORING_URL}}"
-          version: 4
-          metric: "fs:/mnt/media/sketchy"
-          chart: false
 - Selfhosted:
     - Gotify:
         # icon: gotify
