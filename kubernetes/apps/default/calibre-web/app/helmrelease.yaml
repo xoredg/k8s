@@ -67,6 +67,7 @@ spec:
         annotations:
           gethomepage.dev/icon: si-calibre-web
           gethomepage.dev/description: Ebook Web Reader
+          gethomepage.dev/group: Reading
           gethomepage.dev/widget.type: calibreweb
           gethomepage.dev/widget.url: https://ebooks.${SECRET_DOMAIN}
           gethomepage.dev/widget.username: "{{ `{{HOMEPAGE_VAR_CALIBRE_WEB_USERNAME}}` }}"
