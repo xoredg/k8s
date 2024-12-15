@@ -83,7 +83,7 @@ spec:
           gethomepage.dev/group: Selfhosted
           gethomepage.dev/icon: si-searxng
           gethomepage.dev/name: Searxng
-          gethomepage.dev/weight: "10"
+          gethomepage.dev/weight: "1"
         hosts:
           - host: &host search.${SECRET_DOMAIN}
             paths:
