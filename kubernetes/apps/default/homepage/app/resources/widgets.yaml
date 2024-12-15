@@ -21,6 +21,15 @@
 #     memory: true
 #     disk: /
 
+- glances:
+    url: "{{HOMEPAGE_VAR_NAS_MONITORING_URL}}"
+    version: 4
+    disk:
+      - /mnt/nas
+      - /mnt/media/books
+      - /mnt/media/manga
+    label: NAS
+
 - search:
     provider: custom
     target: _blank
