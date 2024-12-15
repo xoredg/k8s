@@ -58,16 +58,6 @@
           version: 4
           metric: "fs:/mnt/media/manga"
           chart: false
-- Selfhosted:
-    - Gotify:
-        # icon: gotify
-        icon: si-ntfy
-        href: https://gotify.{{HOMEPAGE_VAR_DOMAIN}}
-        widget:
-          type: gotify
-          url: https://gotify.{{HOMEPAGE_VAR_DOMAIN}}
-          key: "{{HOMEPAGE_VAR_GOTIFY_TOKEN}}"
-          fields: ["apps", "clients", "messages"]
 - Observability:
     - Pihole:
         icon: si-pi-hole

@@ -65,6 +65,14 @@ spec:
         className: external
         annotations:
           external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/group: Selfhosted
+          gethomepage.dev/name: Gotify
+          gethomepage.dev/icon: si-ntfy
+          gethomepage.dev/weight: "5"
+          gethomepage.dev/widget.type: gotify
+          gethomepage.dev/widget.url: https://gotify
+          gethomepage.dev/widget.key: "{{ `{{HOMEPAGE_VAR_GOTIFY_TOKEN}}` }}"
         hosts:
           - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
