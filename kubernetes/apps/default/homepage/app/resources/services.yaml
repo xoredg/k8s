@@ -41,6 +41,7 @@
         widget:
           type: glances
           url: "{{HOMEPAGE_VAR_NAS_MONITORING_URL}}"
+          version: 4
           metric: "fs:/mnt/nas"
     - Gotify:
         # icon: gotify
