@@ -68,7 +68,6 @@
           url: https://gotify.{{HOMEPAGE_VAR_DOMAIN}}
           key: "{{HOMEPAGE_VAR_GOTIFY_TOKEN}}"
           fields: ["apps", "clients", "messages"]
-- Reading:
 - Observability:
     - Pihole:
         icon: si-pi-hole
