@@ -71,7 +71,7 @@ spec:
           gethomepage.dev/icon: si-ntfy
           gethomepage.dev/weight: "5"
           gethomepage.dev/widget.type: gotify
-          gethomepage.dev/widget.url: https://gotify
+          gethomepage.dev/widget.url: https://gotify.${SECRET_DOMAIN}
           gethomepage.dev/widget.key: "{{ `{{HOMEPAGE_VAR_GOTIFY_TOKEN}}` }}"
         hosts:
           - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
