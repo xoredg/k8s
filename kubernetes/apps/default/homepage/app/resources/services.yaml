@@ -32,18 +32,40 @@
         widget:
           type: jackett
           url: http://plex.{{HOMEPAGE_VAR_DOMAIN}}:9117
-
-- Selfhosted:
+- Storage:
     - NAS:
         icon: si-files
         description: File storage
         href: https://nas.{{HOMEPAGE_VAR_DOMAIN}}
+    - Default:
         widget:
           type: glances
           url: "{{HOMEPAGE_VAR_NAS_MONITORING_URL}}"
           version: 4
           metric: "fs:/mnt/nas"
           chart: false
+    - Books:
+        widget:
+          type: glances
+          url: "{{HOMEPAGE_VAR_NAS_MONITORING_URL}}"
+          version: 4
+          metric: "fs:/mnt/media/books"
+          chart: false
+    - Manga:
+        widget:
+          type: glances
+          url: "{{HOMEPAGE_VAR_NAS_MONITORING_URL}}"
+          version: 4
+          metric: "fs:/mnt/media/manga"
+          chart: false
+    - Sketch:
+        widget:
+          type: glances
+          url: "{{HOMEPAGE_VAR_NAS_MONITORING_URL}}"
+          version: 4
+          metric: "fs:/mnt/media/sketchy"
+          chart: false
+- Selfhosted:
     - Gotify:
         # icon: gotify
         icon: si-ntfy
