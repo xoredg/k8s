@@ -36,6 +36,7 @@
 - Selfhosted:
     - NAS:
         icon: si-files
+        description: File storage server
         href: https://nas.{{HOMEPAGE_VAR_DOMAIN}}
     - Gotify:
         # icon: gotify
