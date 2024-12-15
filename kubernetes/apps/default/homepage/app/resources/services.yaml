@@ -40,7 +40,7 @@
         href: https://nas.{{HOMEPAGE_VAR_DOMAIN}}
         widget:
           type: glances
-          url: "{{ HOMEPAGE_VAR_NAS_MONITORING_URL }}"
+          url: "{{HOMEPAGE_VAR_NAS_MONITORING_URL}}"
           version: 4
           cpu: true
           mem: true
