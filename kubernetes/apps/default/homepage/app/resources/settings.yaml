@@ -10,7 +10,7 @@ background:
   opacity: 20
 color: zinc
 # headerStyle: boxed
-statusStyle: basic
+#statusStyle: dot
 
 layout:
   Media:
