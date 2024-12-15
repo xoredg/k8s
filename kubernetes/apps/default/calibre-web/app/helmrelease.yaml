@@ -65,6 +65,7 @@ spec:
       app:
         className: internal
         annotations:
+          gethomepage.dev/enabled: "true"
           gethomepage.dev/icon: si-calibre-web
           gethomepage.dev/description: Ebook Web Reader
           gethomepage.dev/group: Reading
