@@ -64,6 +64,13 @@ spec:
     ingress:
       app:
         className: internal
+        annotations:
+          gethomepage.dev/icon: si-calibre-web
+          gethomepage.dev/description: Ebook Web Reader
+          gethomepage.dev/widget.type: calibreweb
+          gethomepage.dev/widget.url: https://ebooks.${SECRET_DOMAIN}
+          gethomepage.dev/widget.username: "{{ `{{HOMEPAGE_VAR_CALIBRE_WEB_USERNAME}}` }}"
+          gethomepage.dev/widget.password: "{{ `{{HOMEPAGE_VAR_CALIBRE_WEB_PASSWORD}}` }}"
         hosts:
           - host: &host ebooks.${SECRET_DOMAIN}
             paths:
