@@ -83,13 +83,6 @@ spec:
         size: 1Gi
         globalMounts:
           - path: /config
-      books:
-        type: nfs
-        server: nas.${SECRET_DOMAIN}
-        path: /books
-        globalMounts:
-          - path: /data/books
-            readOnly: true
       manga:
         type: nfs
         server: nas.${SECRET_DOMAIN}
