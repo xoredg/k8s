@@ -69,15 +69,6 @@
           key: "{{HOMEPAGE_VAR_GOTIFY_TOKEN}}"
           fields: ["apps", "clients", "messages"]
 - Reading:
-    - Miniflux:
-        icon: si-rss
-        href: https://rss.{{HOMEPAGE_VAR_DOMAIN}}/
-        description: RSS reader
-        widget:
-          type: miniflux
-          url: https://rss.{{HOMEPAGE_VAR_DOMAIN}}
-          key: "{{HOMEPAGE_VAR_MINIFLUX_TOKEN}}"
-
 - Observability:
     - Pihole:
         icon: si-pi-hole
