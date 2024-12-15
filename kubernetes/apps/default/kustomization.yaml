@@ -14,4 +14,5 @@ resources:
   - ./searxng/ks.yaml
   - ./forgejo/ks.yaml
   - ./komga/ks.yaml
+  - ./calibre-web/ks.yaml
 #  - ./ntfy/ks.yaml
