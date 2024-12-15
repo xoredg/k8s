@@ -36,7 +36,6 @@ spec:
             env:
               TZ: ${TIMEZONE}
               LOG_TARGETS: stdout
-              LOG_LEVEL: debug
             envFrom:
               - secretRef:
                   name: homepage-secret
