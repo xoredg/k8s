@@ -42,7 +42,7 @@ spec:
               repository: ghcr.io/miniflux/miniflux
               tag: 2.2.3-distroless@sha256:6b778e125817592cf67b7eaf4a2fbb7a269d59ea82c82bfaae0c7daee4bc4ef6
             env:
-              BASE_URL: https://rss.${SECRET_DOMAIN}
+              BASE_URL: &url https://rss.${SECRET_DOMAIN}
               CREATE_ADMIN: "1"
               # DEBUG: "1"
               LOG_DATE_TIME: "1"
@@ -118,5 +118,5 @@ spec:
           gethomepage.dev/icon: si-rss
           gethomepage.dev/description: RSS Reader
           gethomepage.dev/widget.type: miniflux
-          gethomepage.dev/widget.url: *host
+          gethomepage.dev/widget.url: *url
           gethomepage.dev/widget.key: "{{ `{{HOMEPAGE_VAR_MINIFLUX_TOKEN}}` }}"
