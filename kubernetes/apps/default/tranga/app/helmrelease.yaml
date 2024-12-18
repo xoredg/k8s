@@ -99,7 +99,7 @@ spec:
                   identifier: main
                   port: http
               - path: /api/?(.*)
-                pathType: ImplementationSpecific
+                pathType: Prefix
                 service:
                   identifier: main
                   port: api
