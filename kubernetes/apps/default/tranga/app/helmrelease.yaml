@@ -83,12 +83,13 @@ spec:
         enabled: true
         className: internal
         annotations:
+          nginx.ingress.kubernetes.io/use-regex: "true"
+          nginx.ingress.kubernetes.io/rewrite-target: /$2
           gethomepage.dev/enabled: "true"
           gethomepage.dev/icon: si-wikibooks
           gethomepage.dev/name: Tranga
           gethomepage.dev/description: Manga downloader
           gethomepage.dev/group: Selfhosted
-          nginx.ingress.kubernetes.io/rewrite-target: /$2
         hosts:
           - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
