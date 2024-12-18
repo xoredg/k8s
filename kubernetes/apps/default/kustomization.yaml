@@ -16,4 +16,5 @@ resources:
   - ./komga/ks.yaml
   - ./calibre-web/ks.yaml
   - ./kaizoku/ks.yaml
+  - ./tranga/ks.yaml
 #  - ./ntfy/ks.yaml
