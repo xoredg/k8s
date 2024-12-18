@@ -98,7 +98,7 @@ spec:
                 service:
                   identifier: main
                   port: http
-              - path: /api/(/|$)(.*)
+              - path: /api(/|$)(.*)
                 pathType: ImplementationSpecific
                 service:
                   identifier: main
