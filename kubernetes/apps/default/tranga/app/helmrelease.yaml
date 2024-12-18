@@ -77,7 +77,7 @@ spec:
           http:
             port: 80
           api:
-            port: 6335
+            port: 6531
     ingress:
       main:
         enabled: true
