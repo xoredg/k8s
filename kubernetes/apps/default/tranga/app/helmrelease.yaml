@@ -96,6 +96,11 @@ spec:
                 service:
                   identifier: main
                   port: http
+              - path: /api
+                pathType: Prefix
+                service:
+                  identifier: main
+                  port: api
         tls:
           - hosts:
               - *host
