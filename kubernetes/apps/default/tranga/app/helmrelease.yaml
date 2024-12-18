@@ -28,10 +28,6 @@ spec:
       main:
         annotations:
           reloader.stakater.com/auto: "true"
-        pod:
-          securityContext:
-            fsGroup: 1000
-            fsGroupChangePolicy: "OnRootMismatch"
         containers:
           main:
             image:
@@ -57,6 +53,11 @@ spec:
             image:
               repository: glax/tranga-api
               tag: latest@sha256:af8970337a12281ba77f85af839cc62e14e5351cbfa01e7b55ff3dab233842f9
+            securityContext:
+              runAsUser: 1000
+              runAsGroup: 1000
+              fsGroup: 1000
+              fsGroupChangePolicy: "OnRootMismatch"
             probes:
               liveness:
                 enabled: true
