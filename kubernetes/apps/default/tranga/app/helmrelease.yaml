@@ -93,12 +93,12 @@ spec:
         hosts:
           - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
-              - path: /?(.*)
+              - path: /(.*)
                 pathType: Prefix
                 service:
                   identifier: main
                   port: http
-              - path: /api/?(.*)
+              - path: /api/(.*)
                 pathType: Prefix
                 service:
                   identifier: main
