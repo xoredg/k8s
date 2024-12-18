@@ -84,7 +84,7 @@ spec:
         className: internal
         annotations:
           nginx.ingress.kubernetes.io/use-regex: "true"
-          nginx.ingress.kubernetes.io/rewrite-target: /$2
+          nginx.ingress.kubernetes.io/rewrite-target: /$1
           gethomepage.dev/enabled: "true"
           gethomepage.dev/icon: si-wikibooks
           gethomepage.dev/name: Tranga
@@ -93,16 +93,16 @@ spec:
         hosts:
           - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
-              - path: /api(/|$)(.*)
-                pathType: ImplementationSpecific
-                service:
-                  identifier: main
-                  port: api
-              - path: /
+              - path: /?(.*)
                 pathType: Prefix
                 service:
                   identifier: main
                   port: http
+              - path: /api/?(.*)
+                pathType: ImplementationSpecific
+                service:
+                  identifier: main
+                  port: api
         tls:
           - hosts:
               - *host
