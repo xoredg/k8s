@@ -29,7 +29,7 @@ spec:
     keepHistory: false
   values:
     controllers:
-      invidious-server:
+      invidious:
         strategy: RollingUpdate
         annotations:
           reloader.stakater.com/auto: "true"
