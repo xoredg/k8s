@@ -89,7 +89,7 @@ spec:
           gethomepage.dev/group: Selfhosted
           gethomepage.dev/icon: si-youtube
           gethomepage.dev/pod-selector: >-
-            app in (
+            app.kubernetes.io/instance in (
               invidious
             )
         hosts:
