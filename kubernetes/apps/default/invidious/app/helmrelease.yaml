@@ -82,10 +82,7 @@ spec:
           # nginx.ingress.kubernetes.io/auth-response-headers: Remote-User,Remote-Name,Remote-Groups,Remote-Email
           # nginx.ingress.kubernetes.io/auth-snippet: proxy_set_header X-Forwarded-Method $request_method;
           external-dns.alpha.kubernetes.io/enabled: "true"
-          external-dns.alpha.kubernetes.io/hostname: bedgetube.${SECRET_DOMAIN}
-          external-dns.alpha.kubernetes.io/internal-hostname: invidious.${SECRET_DOMAIN}
           external-dns.alpha.kubernetes.io/target: external.${SECRET_DOMAIN}
-          external-dns.alpha.kubernetes.io/ingress-hostname-source: annotation-only
           gethomepage.dev/enabled: "true"
           gethomepage.dev/name: Invidious
           gethomepage.dev/description: YouTube.com
@@ -96,7 +93,7 @@ spec:
               invidious
             )
         hosts:
-          - host: &host "invidious.${SECRET_DOMAIN}"
+          - host: &host "bedgetube.${SECRET_DOMAIN}"
             paths:
               - path: /
                 service:
