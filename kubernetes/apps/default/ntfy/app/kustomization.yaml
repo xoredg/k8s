@@ -7,8 +7,8 @@ resources:
   - ./helmrelease.yaml
   - ./horizontalpodautoscaler.yaml
 configMapGenerator:
-    - name: ntfy-config
-      files:
-        - ./config/server.yaml
+  - name: ntfy-config
+    files:
+      - ./config/server.yaml
 generatorOptions:
   disableNameSuffixHash: true
