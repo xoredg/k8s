@@ -67,7 +67,7 @@ spec:
           gethomepage.dev/group: Selfhosted
           gethomepage.dev/name: Ntfy
           gethomepage.dev/icon: si-ntfy
-          gethomepage.dev/weight: "6"
+          gethomepage.dev/weight: "4"
         hosts:
           - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
