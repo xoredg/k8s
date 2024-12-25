@@ -84,7 +84,7 @@ spec:
         type: configMap
         name: ntfy-config
         globalMounts:
-          - path: /etc/ntfy/server.yaml
+          - path: /etc/ntfy/server.yml
             subPath: server.yaml
       cache:
         enabled: true
