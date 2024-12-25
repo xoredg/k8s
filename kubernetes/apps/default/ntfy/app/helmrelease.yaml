@@ -63,6 +63,11 @@ spec:
         className: external
         annotations:
           external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/group: Selfhosted
+          gethomepage.dev/name: Ntfy
+          gethomepage.dev/icon: si-ntfy
+          gethomepage.dev/weight: "6"
         hosts:
           - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
@@ -78,9 +83,13 @@ spec:
         enabled: true
         type: configMap
         name: ntfy-config
-        mountPath: /etc/ntfy/server.yml
+        globalMounts:
+          - path: /etc/ntfy/server.yaml
+            subPath: server.yaml
       cache:
         enabled: true
         type: pvc
         mountPath: /var/cache/ntfy
         storageClass: openebs-hostpath
+        globalMounts:
+          - path: /var/cache/ntfy
