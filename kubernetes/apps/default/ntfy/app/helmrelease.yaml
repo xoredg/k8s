@@ -78,7 +78,7 @@ spec:
                   port: http
         tls:
           - hosts: [*host]
-    persistance:
+    persistence:
       config:
         enabled: true
         type: configMap
@@ -88,8 +88,9 @@ spec:
             subPath: server.yaml
       cache:
         enabled: true
-        type: pvc
-        mountPath: /var/cache/ntfy
+        size: 2Gi
+        accessMode: ReadWriteOnce
+        type: persistentVolumeClaim
         storageClass: openebs-hostpath
         globalMounts:
           - path: /var/cache/ntfy
