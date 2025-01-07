@@ -84,9 +84,10 @@ spec:
         globalMounts:
           - path: /config
       manga:
-        type: nfs
-        server: nas.${SECRET_DOMAIN}
-        path: /manga
+        type: persistentVolumeClaim
+        storageClass: manual
+        volumeName: smb-manga-pv
+        size: 10Gi
+        accessMode: ReadWriteMany
         globalMounts:
           - path: /data/manga
-            readOnly: true

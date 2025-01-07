@@ -20,9 +20,38 @@ spec:
   storageClassName: manual
   csi:
     driver: smb.csi.k8s.io
-    volumeHandle: smb-volume
+    volumeHandle: books-volume
     volumeAttributes:
       source: "${SECRET_CIFS_SHARE}/books"
+    nodeStageSecretRef:
+      name: smb-secret
+      namespace: kube-system
+    mountOptions:
+      - vers=3.0
+      - username=$(username)
+      - password=$(password)
+      - dir_mode=0777
+      - file_mode=0777
+      - uid=1001
+      - gid=1001
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: smb-manga-pv
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  csi:
+    driver: smb.csi.k8s.io
+    volumeHandle: manga-volume
+    volumeAttributes:
+      source: "${SECRET_CIFS_SHARE}/manga"
     nodeStageSecretRef:
       name: smb-secret
       namespace: kube-system
