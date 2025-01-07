@@ -25,7 +25,7 @@ spec:
       source: "//10.26.26.4/books"
     nodeStageSecretRef:
       name: smb-secret
-      namespace: default
+      namespace: kube-system
     mountOptions:
       - vers=3.0
       - username=$(username)
