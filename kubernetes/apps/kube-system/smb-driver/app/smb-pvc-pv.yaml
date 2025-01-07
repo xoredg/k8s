@@ -35,3 +35,11 @@ spec:
     requests:
       storage: 5Gi
   storageClassName: manual
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: manual
+provisioner: kubernetes.io/no-provisioner # We use no-provisioner for manual PVs
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
