@@ -22,7 +22,7 @@ spec:
     driver: smb.csi.k8s.io
     volumeHandle: smb-volume
     volumeAttributes:
-      source: "//10.26.26.4/books"
+      source: "${SECRET_CIFS_SHARE}/books"
     nodeStageSecretRef:
       name: smb-secret
       namespace: kube-system
