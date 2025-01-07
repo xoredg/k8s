@@ -1,3 +1,11 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: manual
+provisioner: kubernetes.io/no-provisioner # We use no-provisioner for manual PVs
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -22,24 +30,3 @@ spec:
       - vers=3.0
       - username=$(username)
       - password=$(password)
-
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: smb-books-pvc
-spec:
-  accessModes:
-    - ReadWriteMany
-  resources:
-    requests:
-      storage: 5Gi
-  storageClassName: manual
----
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: manual
-provisioner: kubernetes.io/no-provisioner # We use no-provisioner for manual PVs
-reclaimPolicy: Retain
-volumeBindingMode: WaitForFirstConsumer
