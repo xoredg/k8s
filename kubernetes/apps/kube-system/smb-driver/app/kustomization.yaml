@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - ./externalsecret.yaml
   - ./helmrelease.yaml
-  - ./smb-pv-pvc.yaml
+  - ./smb-pvc-pv.yaml
