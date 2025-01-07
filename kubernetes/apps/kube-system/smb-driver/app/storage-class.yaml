@@ -12,7 +12,7 @@ metadata:
   name: smb-books-pv
 spec:
   capacity:
-    storage: 5Gi
+    storage: 100Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
@@ -41,7 +41,7 @@ metadata:
   name: smb-manga-pv
 spec:
   capacity:
-    storage: 5Gi
+    storage: 100Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
