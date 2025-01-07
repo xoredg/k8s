@@ -87,7 +87,15 @@ spec:
         type: persistentVolumeClaim
         storageClass: manual
         volumeName: smb-manga-pv
-        size: 10Gi
+        size: 100Gi
         accessMode: ReadWriteMany
         globalMounts:
           - path: /data/manga
+      books:
+        type: persistentVolumeClaim
+        storageClass: manual
+        volumeName: smb-books-pv
+        size: 10Gi
+        accessMode: ReadWriteMany
+        globalMounts:
+          - path: /data/books
