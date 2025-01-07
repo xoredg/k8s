@@ -4,6 +4,7 @@ metadata:
   name: csi-driver-smb
   namespace: kube-system
 spec:
+  interval: 30m
   releaseName: csi-driver-smb
   chart:
     spec:
@@ -13,6 +14,13 @@ spec:
         kind: HelmRepository
         name: csi-driver-smb
         namespace: flux-system
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
   values:
     image:
       tag: "latest"
