@@ -30,3 +30,7 @@ spec:
       - vers=3.0
       - username=$(username)
       - password=$(password)
+      - dir_mode=0777
+      - file_mode=0777
+      - uid=1001
+      - gid=1001
