@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: csi-driver-smb
+  namespace: kube-system
+spec:
+  releaseName: csi-driver-smb
+  chart:
+    spec:
+      chart: csi-driver-smb
+      version: "v1.16.0" # You can specify the version based on your requirements
+      sourceRef:
+        kind: HelmRepository
+        name: csi-driver-smb
+        namespace: flux-system
+  values:
+    image:
+      tag: "latest"
