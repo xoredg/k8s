@@ -98,9 +98,11 @@ spec:
               - path: /config
 
       books:
-        type: nfs
-        server: nas.${SECRET_DOMAIN}
-        path: /books
+        type: persistentVolumeClaim
+        storageClass: manual
+        volumeName: smb-books-pv
+        size: 10Gi
+        accessMode: ReadWriteMany
         globalMounts:
           - path: /data/books
 
