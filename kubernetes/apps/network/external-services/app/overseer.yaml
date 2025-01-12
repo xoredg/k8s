@@ -19,7 +19,7 @@ ports:
   - name: ""
     appProtocol: http
     protocol: TCP
-    port: 80
+    port: 5055
 endpoints:
   - addresses:
       - "${SECRET_PLEX_HOST}"
