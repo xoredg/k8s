@@ -22,7 +22,7 @@ ports:
     port: 80
 endpoints:
   - addresses:
-      - "plex.${SECRET_DOMAIN}"
+      - "${SECRET_PLEX_HOST}"
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
