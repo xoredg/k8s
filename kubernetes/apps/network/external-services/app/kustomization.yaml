@@ -4,3 +4,5 @@ kind: Kustomization
 resources:
   - ./pihole.yaml
   - ./overseer.yaml
+  - ./jackett.yaml
+  - ./tautulli.yaml

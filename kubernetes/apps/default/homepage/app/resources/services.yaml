@@ -18,20 +18,20 @@
     - Overseerr:
         # icon: overseerr
         icon: mdi-movie-open-plus
-        href: http://plex.{{HOMEPAGE_VAR_DOMAIN}}:5055
+        href: https://overseer.{{HOMEPAGE_VAR_DOMAIN}}
         description: Request movies and TV shows
         widget:
           type: overseerr
-          url: http://plex.{{HOMEPAGE_VAR_DOMAIN}}:5055
+          url: https://overseer.{{HOMEPAGE_VAR_DOMAIN}}
           key: "{{HOMEPAGE_VAR_OVERSEERR_TOKEN}}"
     - Jackett:
         # icon: jackett.png
         description: Indexer
         icon: mdi-radar
-        href: http://plex.{{HOMEPAGE_VAR_DOMAIN}}:9117
+        href: http://jackett.{{HOMEPAGE_VAR_DOMAIN}}
         widget:
           type: jackett
-          url: http://plex.{{HOMEPAGE_VAR_DOMAIN}}:9117
+          url: https://jacket.{{HOMEPAGE_VAR_DOMAIN}}
 - Storage:
     - NAS:
         icon: si-files
