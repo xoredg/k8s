@@ -20,3 +20,5 @@ spec:
       hostname: "tailscale-operator"
     apiServerProxyConfig:
       mode: "true"
+    podAnnotations:
+      app.kubernetes.io/instance: tailscale-operator
