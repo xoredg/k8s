@@ -51,7 +51,7 @@ spec:
             port: *port
     ingress:
       main:
-        className: tailscale
+        className: internal
         annotations:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/group: Reading
