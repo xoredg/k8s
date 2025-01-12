@@ -51,7 +51,7 @@ spec:
             port: *port
     ingress:
       main:
-        className: internal
+        className: tailscale
         annotations:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/group: Reading
@@ -74,19 +74,19 @@ spec:
         tls:
           - hosts:
               - *host
-      tailscale:
-        enabled: true
-        className: nginx-tailscale
-        hosts:
-          - host: *host
-            paths:
-              - path: /
-                service:
-                  identifier: app
-                  port: http
-        tls:
-          - hosts:
-              - *host
+      # tailscale:
+      #   enabled: true
+      #   className: nginx-tailscale
+      #   hosts:
+      #     - host: *host
+      #       paths:
+      #         - path: /
+      #           service:
+      #             identifier: app
+      #             port: http
+      #   tls:
+      #     - hosts:
+      #         - *host
     persistence:
       config:
         enabled: true
