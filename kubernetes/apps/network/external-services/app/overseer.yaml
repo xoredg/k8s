@@ -64,7 +64,7 @@ spec:
               service:
                 name: overseer-external
                 port:
-                  number: 80
+                  name: http
   tls:
     - hosts:
         - *host
