@@ -13,13 +13,13 @@ kind: EndpointSlice
 metadata:
   name: overseer-external
   labels:
-    kubernetes.io/service-name: pihole-external
+    kubernetes.io/service-name: overseer-external
 addressType: IPv4
 ports:
   - name: ""
     appProtocol: http
     protocol: TCP
-    port: 5055
+    port: 80
 endpoints:
   - addresses:
       - "${SECRET_PLEX_HOST}"
