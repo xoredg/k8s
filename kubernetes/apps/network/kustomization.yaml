@@ -9,3 +9,4 @@ resources:
   - ./k8s-gateway/ks.yaml
   - ./nginx/ks.yaml
   - ./external-services/ks.yaml
+  - ./tailscale/ks.yaml
