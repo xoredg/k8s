@@ -15,7 +15,7 @@ metadata:
     kubernetes.io/service-name: overseer-external
 addressType: IPv4
 ports:
-  - name: ""
+  - name: "http"
     appProtocol: http
     protocol: TCP
     port: 5055
@@ -41,7 +41,7 @@ spec:
               service:
                 name: overseer-external
                 port:
-                  number: 80
+                  name: http
   tls:
     - hosts:
         - *host
