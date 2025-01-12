@@ -31,7 +31,8 @@ spec:
           tailscale.com/hostname: "nginx-tailscale"
         type: LoadBalancer
         loadBalancerClass: tailscale
-        externalTrafficPolicy: Local
+        # externalTrafficPolicy: Local
+        externalTrafficPolicy: Cluster
 
       publishService:
         enabled: true
