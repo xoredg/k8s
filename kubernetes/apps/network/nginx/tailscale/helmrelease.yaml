@@ -84,7 +84,7 @@ spec:
             any: true
 
       extraArgs:
-        default-ssl-certificate: "network/${SECRET_DOMAIN/./-}-production"
+        default-ssl-certificate: "network/${SECRET_DOMAIN/./-}-production-tls"
 
       topologySpreadConstraints:
         - maxSkew: 2
