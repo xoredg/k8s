@@ -1,0 +1,71 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: overseer-external
+spec:
+  ports:
+    - name: http
+      port: 5055
+      targetPort: 80
+---
+apiVersion: discovery.k8s.io/v1
+kind: EndpointSlice
+metadata:
+  name: pihole-external
+  labels:
+    kubernetes.io/service-name: pihole-external
+addressType: IPv4
+ports:
+  - name: ""
+    appProtocol: http
+    protocol: TCP
+    port: 80
+endpoints:
+  - addresses:
+      - "plex.${SECRET_DOMAIN}"
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: overseer-internal
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+spec:
+  ingressClassName: "internal"
+  rules:
+    - host: &host overseer.${SECRET_DOMAIN}
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: overseer-external
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - *host
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: overseer-internal
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+spec:
+  ingressClassName: "tailscale"
+  rules:
+    - host: &host overseer.${SECRET_TS_DOMAIN}
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: overseer-external
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - *host
