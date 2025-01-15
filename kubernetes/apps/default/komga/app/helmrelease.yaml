@@ -33,7 +33,7 @@ spec:
           app:
             image:
               repository: gotson/komga
-              tag: "1.14.1@sha256:6e9336c7790c8481afa767e6f39395b720746f5f86ce733547c58799016adf8e"
+              tag: "1.18.0@sha256:0997326496bb29cd6299ffab6cf1ca20490a3da3b240cd47c3c4e1aa67dbcf97"
             env:
               TZ: ${TIMEZONE}
               SERVER_PORT: &port 8080
