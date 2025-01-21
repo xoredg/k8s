@@ -5,4 +5,4 @@ dns_servers:
       hosts:
         "pihole":
           ansible_user: "xored"
-          ansible_host: 10.26.26.2
+          ansible_host: 10.26.10.6
