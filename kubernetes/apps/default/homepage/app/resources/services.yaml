@@ -28,10 +28,10 @@
         # icon: jackett.png
         description: Indexer
         icon: mdi-radar
-        href: http://jackett.{{HOMEPAGE_VAR_DOMAIN}}
+        href: https://jackett.{{HOMEPAGE_VAR_DOMAIN}}
         widget:
           type: jackett
-          url: https://jacket.{{HOMEPAGE_VAR_DOMAIN}}
+          url: https://jackett.{{HOMEPAGE_VAR_DOMAIN}}
 - Storage:
     - NAS:
         icon: si-files
